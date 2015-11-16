@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="hops">Freaks and Geeks</h1>
+<div class="row">
+  <% @student.each do |x| %>
+  <div class="col-xs-6">
+    <div class="well">
+      <div class="media">
+        <div class="media-body">
+        <p>Name: <%= x.name %></p>
+        <p>Year: <%= x.acayear %></p>
+        <p>Class: <%= x.cohort %></p>
+        <p>Rating: <%= x.rating %></p>
+        <p>Teacher: <%= link_to x.teacher.username, profile_path(x.teacher) %></p>
+        <p><%= link_to 'Student Profile', x %> | <%= link_to 'Edit', edit_student_path(x) %> | <%= link_to 'Dismiss', x, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
+      <div class="media-right">
+          <%= image_tag x.avatar.url(:thumb) %>
+        </div>
+      </div>
+    </div>
+    </div>
+    <% end %>
+</div>
+  
+
+<br>
+
+<%= link_to 'New Student', new_student_path %>

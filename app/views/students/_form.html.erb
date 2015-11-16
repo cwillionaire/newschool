@@ -1,0 +1,42 @@
+<div class="well">
+<%= form_for(@student) do |f| %>
+<% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this tweet from being saved:</h2>
+
+      <ul>
+        <% @student.errors.full_name.each do |name| %>
+        <li><%= name %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :acayear %><br>
+    <%= f.number_field :acayear %>
+  </div>
+  <div class="field">
+    <%= f.label :cohort %><br>
+    <%= f.text_field :cohort %>
+  </div>
+  <div class="field">
+    <%= f.label :rating %><br>
+    <%= f.number_field :rating %>
+  </div>
+  <div class="field">
+    <%= f.label "Photo" %><br>
+    <%= f.file_field :avatar %>
+  </div>
+  <div class="field cant-see-me">
+    <%= f.label :teacher_id %><br>
+    <%= f.text_field :teacher_id, value: current_teacher.id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>

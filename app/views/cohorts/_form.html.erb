@@ -1,0 +1,23 @@
+<%= form_for(@cohort) do |f| %>
+<% if @cohort.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cohort.errors.count, "error") %> prohibited this tweet from being saved:</h2>
+
+      <ul>
+        <% @cohort.errors.full_name.each do |name| %>
+        <li><%= name %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :subject %><br>
+    <%= f.text_field :subject %>
+  </div>
+  
+ 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

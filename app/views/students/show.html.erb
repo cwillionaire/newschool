@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @student.name %>
+</p>
+<p>
+  <strong>Year:</strong>
+  <%= @student.acayear %>
+</p>
+<p>
+  <strong>Cohort:</strong>
+  <%= @student.cohort %>
+</p>
+<p>
+  <strong>Rating:</strong>
+  <%= @student.rating %>
+</p>
+<p>
+  <strong>Teacher:</strong>
+  <%= link_to @student.teacher.name, profile_path(@student.teacher) %>
+</p>
+<p>
+  <%= image_tag @student.avatar.url(:medium) %>
+</p>
+
+<%= link_to 'Edit', edit_student_path(@student) %> | <%= link_to 'Back', students_path %>
