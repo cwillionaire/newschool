@@ -1,23 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 
-<p>
+<p class="laney">
   <strong>Name:</strong>
   <%= @student.name %>
 </p>
-<p>
+<p class="laney">
   <strong>Year:</strong>
   <%= @student.acayear %>
 </p>
-<p>
+<p class="laney">
   <strong>Cohort:</strong>
   <%= @student.cohort %>
 </p>
-<p>
+<p class="laney">
   <strong>Rating:</strong>
   <%= @student.rating %>
 </p>
-<p>
+<p class="laney">
   <strong>Teacher:</strong>
   <%= link_to @student.teacher.name, profile_path(@student.teacher) %>
 </p>

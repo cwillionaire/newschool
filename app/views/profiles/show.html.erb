@@ -1,6 +1,8 @@
 <h1 class="hops"><%= @teacher.name %>'s Roll Call</h1>
 
-<% @teacher.students.each do |student| %>
-  <%= student.name %> <br />
-<% end %>
+<p class="laney">
+	<% @teacher.students.each do |student| %>
+  		<%= student.name %> <br />
+	<% end %>
+</p>
 
